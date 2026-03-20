@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="post-title-meta">Blog Post | CyberSecurity Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <style>
+        /* Basic styling for markdown content */
+        .post-content h1, .post-content h2, .post-content h3 {
+            color: var(--color-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .post-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        .post-content a {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+        .post-content code {
+            background-color: var(--color-bg-darker);
+            padding: 0.2em 0.4em;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-code);
+            font-size: 0.9em;
+        }
+        .post-content pre {
+            background-color: var(--color-bg-darker);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin-bottom: 1rem;
+            font-family: var(--font-code);
+            font-size: 0.9em;
+        }
+        .post-content pre code {
+            background: none;
+            padding: 0;
+        }
+        .post-content ul, .post-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: disc; /* default for ul */
+        }
+        .post-content ol {
+            list-style-type: decimal;
+        }
+        .post-content blockquote {
+            border-left: 4px solid var(--color-primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <span>&lt;</span>CYBER<span>/&gt;</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="nav-link">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h1 id="post-main-title" class="text-center">Loading Post...</h1>
+            <div id="post-content" class="post-content" style="margin-top: 2rem;">
+                <!-- Markdown content will be loaded here -->
+                <p class="text-center text-muted">Please wait while the content loads, or navigate back to the <a href="index.html">blog overview</a>.</p>
+            </div>
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="index.html" class="btn btn-primary">&leftarrow; Back to Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center" style="padding: 2rem; border-top: 1px solid var(--glass-border); margin-top: 2rem;">
+        <p class="text-sm">© 2026 Cybersecurity Portfolio.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const postTitleMeta = document.getElementById('post-title-meta');
+            const postMainTitle = document.getElementById('post-main-title');
+            const postContentDiv = document.getElementById('post-content');
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const markdownPath = urlParams.get('post'); // e.g., ?post=bugbounty-method.md
+
+            if (!markdownPath) {
+                postMainTitle.textContent = 'Post Not Found';
+                postContentDiv.innerHTML = '<p class="text-center text-danger">No post specified. Please go back to the <a href="index.html">blog overview</a>.</p>';
+                return;
+            }
+
+            try {
+                const response = await fetch(`../blog/posts/${markdownPath}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const markdown = await response.text();
+
+                // Convert markdown to HTML
+                const htmlContent = marked.parse(markdown);
+
+                // Extract title from the markdown for the page title
+                const tempDivForTitle = document.createElement('div');
+                tempDivForTitle.innerHTML = htmlContent;
+                const h1Element = tempDivForTitle.querySelector('h1');
+                const title = h1Element ? h1Element.textContent : 'Untitled Post';
+
+                // Update page title and main title
+                postTitleMeta.textContent = `${title} | Blog Post`;
+                postMainTitle.textContent = title;
+
+                // Set post content
+                if (h1Element) h1Element.remove(); // Remove h1 from the main content to avoid duplication
+                postContentDiv.innerHTML = tempDivForTitle.innerHTML; // Use the modified tempDiv's content
+
+            } catch (error) {
+                console.error(`Error loading or parsing markdown file ${markdownPath}:`, error);
+                postMainTitle.textContent = 'Error Loading Post';
+                postContentDiv.innerHTML = `<p class="text-center text-danger">Could not load content for "${markdownPath}". Please check the path or try again later. <a href="index.html">Back to blog</a></p>`;
+            }
+        });
+    </script>
+</body>
+</html>

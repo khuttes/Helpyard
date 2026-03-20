@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Hasib Islam | HelpYard Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Md. Hasib Islam, a Cybersecurity Researcher & CSE Student specializing in Penetration Testing, Bug Bounty Hunting, and Toolkit Development.">
+    <meta name="keywords"
+        content="Cybersecurity, Penetration Testing, Bug Bounty, Ethical Hacking, Portfolio, Md. Hasib Islam, Bangladesh, CSE">
+    <meta name="author" content="Md. Hasib Islam">
+    <meta name="theme-color" content="#0a0e27">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://khuttes.github.io/portfolio/">
+    <meta property="og:title" content="Md. Hasib Islam - Cybersecurity Researcher">
+    <meta property="og:description"
+        content="Explore the cybersecurity projects, tools, and research of Md. Hasib Islam. specializing in offensive security and network defense.">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://khuttes.github.io/portfolio/">
+    <meta property="twitter:title" content="Md. Hasib Islam - Cybersecurity Researcher">
+    <meta property="twitter:description"
+        content="Showcasing penetration testing projects, tools, and cybersecurity research.">
+    <meta property="twitter:image" content="assets/og-image.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/glitch.css">
+    <link rel="stylesheet" href="css/terminal.css">
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/project-reports.css">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://*.youtube.com https://*.ytimg.com https://*.googleapis.com https://*.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://formspree.io https://api.github.com https://script.google.com https://script.googleusercontent.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.youtube.com https://*.ytimg.com https://*.googleapis.com https://*.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://formspree.io https://api.github.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://*.githubusercontent.com; object-src 'none'; frame-src https://*.youtube.com https://formspree.io;">
+    <!-- HSTS is a server-side header. For static sites hosted on platforms like GitHub Pages, configure it via the hosting provider if possible. -->
+    <!-- Example: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload -->
+
+    <style>
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+
+    <!-- Google Analytics (GA4) -->
+    <!-- GA Placeholder Removed -->
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">HELPYARD</a>
+
+            <nav id="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#project-reports" class="nav-link">Reports</a>
+                <a href="#bug-bounty-writeups" class="nav-link">Writeups</a>
+                <a href="#github" class="nav-link">GitHub</a>
+                <a href="#blog" class="nav-link">Articles</a>
+                <a href="#contact" class="nav-link">Hire Me</a>
+            </nav>
+
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"
+                    style="background:none; border:none; font-size: 1.5rem; cursor: pointer; padding: 0.5rem; color: var(--color-text-main);">
+                    <i>☀️</i>
+                </button>
+                <button id="mobile-menu-btn" class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-video">
+                <iframe
+                    id="hero-video"
+                    src="https://www.youtube.com/embed/dfdhAwSDOgw?enablejsapi=1&autoplay=1&mute=1&playsinline=1&loop=1&playlist=dfdhAwSDOgw"
+                    title="Cybersecurity Introduction"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hello, I'm<br> <span class="text-gradient glitch" data-text="Md. Hasib Islam">Md. Hasib Islam</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="typing-text"></span>
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary btn-glow">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Hire Me</a>
+                    <a href="assets/Md_Hasib_Islam_CV.pdf" download class="btn btn-secondary" style="border-style: dashed;">
+                        <span>📄 Download CV</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-center">About <span class="text-gradient">Me</span></h2>
+            <div class="card">
+                <p>
+                    I’m Md. Hasib Islam, completing my education in Computer Science and Engineering in
+                    Bangladesh, driven by a deep passion for cybersecurity. I work with Cyber HelpYard, where I focus on
+                    web and network penetration testing, bug bounty hunting, and developing security tools.
+                    <br><br>
+                    Throughout my journey, I’ve built over 10 security projects, including a malware behavior analyzer,
+                    a graphical password system, and several penetration testing tools. I’m a firm believer in constant
+                    learning and actively contribute to the cybersecurity community through open-source work and
+                    detailed writeups. If you're looking for a dedicated, evolving security specialist, you’ve found
+                    one.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Terminal Section -->
+    <section id="terminal-section" class="section">
+        <div class="container">
+            <h2 class="text-center">Interactive <span class="text-gradient glitch-subtle"
+                    data-text="Terminal">Terminal</span></h2>
+            <p class="text-center" style="margin-bottom: 3rem;">Try typing commands like 'help', 'whoami', or 'skills'
+            </p>
+
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <span class="terminal-button close"></span>
+                    <span class="terminal-button minimize"></span>
+                    <span class="terminal-button maximize"></span>
+                    <span class="terminal-title">visitor@cyberportfolio:~$</span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <!-- Terminal output will be inserted here by JS -->
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">$</span>
+                    <input type="text" id="terminal-input" placeholder="Type a command...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="section">
+        <div class="container">
+            <h2 class="text-center">My <span class="text-gradient">Journey</span></h2>
+            <p class="text-center" style="margin-bottom: 3rem;">Interactive Learning Path & Milestones</p>
+
+            <div class="roadmap-timeline">
+                <!-- Roadmap Item 1 -->
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content card">
+                        <span class="roadmap-status status-completed">Completed</span>
+                        <h3>Foundations</h3>
+                        <p>Mastered Linux essentials, Networking (CCNA level), and Python scripting.</p>
+                        <span class="badge">Linux</span><span class="badge">Python</span><span
+                            class="badge">Networking</span>
+                    </div>
+                </div>
+
+                <!-- Roadmap Item 2 -->
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content card">
+                        <span class="roadmap-status status-completed">Completed</span>
+                        <h3>Core Security</h3>
+                        <p>Deep dive into OWASP Top 10, Web Fundamentals, and Cryptography basics.</p>
+                        <span class="badge">OWASP</span><span class="badge">HTTP</span><span class="badge">Crypto</span>
+                    </div>
+                </div>
+
+                <!-- Roadmap Item 3 -->
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content card">
+                        <span class="roadmap-status status-inprogress">In Progress</span>
+                        <h3>Offensive Security</h3>
+                        <p>Active penetration testing practice. Pursuing OSCP certification. CTF participation.</p>
+                        <span class="badge">Burp Suite</span><span class="badge">Metasploit</span><span
+                            class="badge">Active Directory</span>
+                    </div>
+                </div>
+
+                <!-- Roadmap Item 4 -->
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content card">
+                        <span class="roadmap-status status-planned">Planned</span>
+                        <h3>Advanced Research</h3>
+                        <p>Focus on Exploit Development, Reverse Engineering, and Cloud Security (AWS).</p>
+                        <span class="badge">Assembly</span><span class="badge">Ghidra</span><span class="badge">AWS
+                            Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="text-center">Technical <span class="text-gradient">Arsenal</span></h2>
+            <div class="skills-grid" style="margin-top: 3rem;">
+
+                <!-- Category 1 -->
+                <div class="skill-category card">
+                    <h3>Offensive</h3>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Web App Pentesting</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Network Security</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Wi-Fi Hacking</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="skill-category card">
+                    <h3>Tools</h3>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Burp Suite</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Metasploit</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Wireshark</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="skill-category card">
+                    <h3>Languages</h3>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Python</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Bash Scripting</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="text-center">My <span class="text-gradient">Certifications</span></h2>
+            <div class="projects-grid" style="margin-top: 3rem;">
+                <!-- Certification Card Example -->
+                <div class="card">
+                    <span class="badge badge-outline">Advanced CyberSecurity</span>
+                    <h3 class="card-title">Advanced CyberSecurity-Threats and Governance</h3>
+                    <p>Issued by Great Learning Academy</p>
+                    <p class="text-xs text-muted">Date: Nov 2024</p>
+                    <a href="https://drive.google.com/file/d/1EPbaXZ6miNRfeMGP9Co4572OR5E5C0Gv/view?usp=drive_link" class="btn btn-secondary btn-sm" target="_blank" style="margin-top: 1rem;">View Credential →</a>
+                </div>
+                <!-- Add more certification cards as needed -->
+                 <div class="card">
+                    <span class="badge badge-outline">Networking</span>
+                    <h3 class="card-title">Network Security</h3>
+                    <p>Issued by Great Learning Academy</p>
+                    <p class="text-xs text-muted">Date: Nov 2024</p>
+                    <a href="https://drive.google.com/file/d/1C9Qi7nCRBeY5zud_hcSxIWIsQANJnmQi/view?usp=drive_link" class="btn btn-secondary btn-sm" target="_blank" style="margin-top: 1rem;">View Credential →</a>
+                </div>
+                
+                <div class="card">
+                    <span class="badge badge-outline">CISSP</span>
+                    <h3 class="card-title">Security Assessment & Testing and Security Operations</h3>
+                    <p>Issued by SkillUp</p>
+                    <p class="text-xs text-muted">Date: 22 Nov 2024</p>
+                    <a href="https://drive.google.com/file/d/1gMdO4K3Gs3o65rWm7r8kXCizkP-SgMrJ/view?usp=drive_link" class="btn btn-secondary btn-sm" target="_blank" style="margin-top: 1rem;">View Credential →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="text-center">My <span class="text-gradient">Services</span></h2>
+            <div id="services-container" class="services-grid"></div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center">Featured <span class="text-gradient">Projects</span></h2>
+            <div class="projects-grid" style="margin-top: 3rem;">
+                <!-- Project 1: CS-GPAS -->
+                <div class="card project-card">
+                    <div class="project-image">
+                        <span style="font-size: 3rem;">🔐</span>
+                    </div>
+                    <span class="badge badge-outline">Research Project</span>
+                    <h3 class="card-title">Graphical Password Auth System</h3>
+                    <p>Client-side authentication using image sequence recognition. Features image randomization
+                        and localStorage integration for enhanced security without backend dependency.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://github.com/khuttes/CS-GPAS-Client-Side-Graphical-Password-Authentication-System-"
+                            target="_blank" class="btn btn-secondary btn-sm">GitHub →</a>
+                        <span class="badge">HTML</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">⭐10+</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Malware Analysis -->
+                <div class="card project-card">
+                    <div class="project-image">
+                        <span style="font-size: 3rem;">🦠</span>
+                    </div>
+                    <span class="badge badge-outline">Security Research</span>
+                    <h3 class="card-title">Malware Behavior Analysis Tool</h3>
+                    <p>Dynamic malware analysis tool utilizing runtime monitoring techniques to detect anomalies,
+                        identify malicious behavior patterns, and enhance cybersecurity measures.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://github.com/khuttes/Malware-Behavior-Analysis-Tool" target="_blank"
+                            class="btn btn-secondary btn-sm">GitHub →</a>
+                        <span class="badge">HTML</span>
+                        <span class="badge">Security</span>
+                        <span class="badge">⭐10+</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Port Scanner -->
+                <div class="card project-card">
+                    <div class="project-image">
+                        <span style="font-size: 3rem;">🔍</span>
+                    </div>
+                    <span class="badge badge-outline">Tool Development</span>
+                    <h3 class="card-title">Port Scanner (Mini Nmap)</h3>
+                    <p>Lightweight network reconnaissance tool for port scanning and service enumeration.
+                        Python-based scanner mimicking core Nmap functionality for pentesting.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://github.com/khuttes/Port-Scanner-Like-Mini-Nmap-" target="_blank"
+                            class="btn btn-secondary btn-sm">GitHub →</a>
+                        <span class="badge">Python</span>
+                        <span class="badge">Network</span>
+                        <span class="badge">⭐10+</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Brute-Force Simulator -->
+                <div class="card project-card">
+                    <div class="project-image">
+                        <span style="font-size: 3rem;">💣</span>
+                    </div>
+                    <span class="badge badge-outline">Simulation</span>
+                    <h3 class="card-title">Brute-Force Simulator</h3>
+                    <p>Educational tool demonstrating password cracking techniques and defense mechanisms.
+                        Visualizes attack vectors to helps understand importance of strong passwords.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://github.com/khuttes/Brute-Force-Attack-Simulator-for-passwords" target="_blank"
+                            class="btn btn-secondary btn-sm">GitHub →</a>
+                        <span class="badge">Python</span>
+                        <span class="badge">Security</span>
+                        <span class="badge">⭐10+</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Voice Assistant -->
+                <div class="card project-card">
+                    <div class="project-image">
+                        <span style="font-size: 3rem;">🎤</span>
+                    </div>
+                    <span class="badge badge-outline">AI & IoT</span>
+                    <h3 class="card-title">Voice Control Assistant</h3>
+                    <p>Local voice-controlled assistant for system automation. Processes natural language
+                        commands to execute tasks without cloud dependencies.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://github.com/khuttes/Local-Voice-Controlled-Assistant" target="_blank"
+                            class="btn btn-secondary btn-sm">GitHub →</a>
+                        <span class="badge">Python</span>
+                        <span class="badge">Automation</span>
+                        <span class="badge">⭐10+</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: Home Automation -->
+                <div class="card project-card">
+                    <div class="project-image">
+                        <span style="font-size: 3rem;">🏠</span>
+                    </div>
+                    <span class="badge badge-outline">IoT Security</span>
+                    <h3 class="card-title">Secure Home Automation</h3>
+                    <p>IoT-based home automation system with focus on secure communication protocols.
+                        Demonstrates implementation of encrypted controls for smart devices.</p>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;">
+                        <a href="https://github.com/khuttes/Home-Automation-System" target="_blank"
+                            class="btn btn-secondary btn-sm">GitHub →</a>
+                        <span class="badge">C++</span>
+                        <span class="badge">IoT</span>
+                        <span class="badge">⭐10+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Project Reports Section -->
+    <section id="project-reports" class="section">
+        <div class="container">
+            <h2 class="text-center">Real Project <span class="text-gradient">Reports</span></h2>
+            <div id="reports-container" class="reports-grid"></div>
+        </div>
+    </section>
+
+    <!-- GitHub Projects Section -->
+    <section id="github" class="section">
+        <div class="container">
+            <h2 class="text-center">Latest <span class="text-gradient">GitHub Projects</span></h2>
+            <div id="github-stats-container" style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;"></div>
+            <div id="github-repos" class="projects-grid" style="margin-top: 3rem;">
+                <!-- Repositories will be loaded here by js/github-repos.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bug Bounty Writeups Section -->
+    <section id="bug-bounty-writeups" class="section">
+        <div class="container">
+            <h2 class="text-center">Bug Bounty <span class="text-gradient">Writeups</span></h2>
+            <div id="bug-bounty-posts-container" class="projects-grid" style="margin-top: 3rem;">
+                <!-- Bug bounty writeups will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bug Bounty Leaderboard Section -->
+    <section id="bounty-leaderboard" class="section">
+        <div class="container">
+            <h2 class="text-center">Bug Bounty <span class="text-gradient">Leaderboard</span></h2>
+            <div class="projects-grid" style="margin-top: 3rem;">
+                <!-- Leaderboard Card Example -->
+                <div class="card">
+                    <span class="badge badge-outline">HackerOne</span>
+                    <h3 class="card-title">Top 40% Rank</h3>
+                    <p>Total Bounties: $2500+</p>
+                    <p class="text-xs text-muted">Highest Impact: Critical</p>
+                    <a href="https://hackerone.com/friday44" class="btn btn-secondary btn-sm" target="_blank" style="margin-top: 1rem;">View Profile →</a>
+                </div>
+                <!-- Add more leaderboard cards as needed -->
+                <div class="card">
+                    <span class="badge badge-outline">Bugcrowd</span>
+                    <h3 class="card-title">Rank: Top 50%</h3>
+                    <p>Total Bounties: $1,000+</p>
+                    <p class="text-xs text-muted">Highest Impact: High</p>
+                    <a href="https://bugcrowd.com/h/friday44" class="btn btn-secondary btn-sm" target="_blank" style="margin-top: 1rem;">View Profile →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="text-center">Latest <span class="text-gradient">Articles</span></h2>
+            <div id="blog-posts-container" class="projects-grid" style="margin-top: 3rem;">
+                <!-- Blog posts will be loaded here by js/blog.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="text-center">Get In <span class="text-gradient">Touch</span></h2>
+            <div class="contact-container" style="margin-top: 3rem;">
+                <div class="card">
+                    <h3>Contact Info</h3>
+                    <p>Always open to discussing new opportunities, collaborations, or security research.</p>
+                    <ul style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <li>📧 ihasib199@gmail.com</li>
+                        <li>🏢 HelpYard</li>
+                        <li>📍 Naogaon,Rajshahi,Bangladesh.</li>
+                        <li>🐙+8801773743025</li>
+                        <li>🐙 <a href="https://github.com/khuttes" target="_blank"
+                                style="color: var(--color-primary);">github.com/khuttes</a></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" name="message" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow">Send Message</button>
+                        <div id="form-status" style="margin-top: 1rem; font-size: 0.9rem;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center" style="padding: 2rem; border-top: 1px solid var(--glass-border); margin-top: 2rem;">
+        <p class="text-sm">© 2026 Md. Hasib Islam | HelpYard | Built with ❤️ and secure code</p>
+        <p class="text-xs text-muted" style="margin-top: 0.5rem;">Bangladesh | <a href="https://github.com/khuttes"
+                target="_blank" style="color: var(--color-primary);">github.com/khuttes</a></p>
+    </footer>
+
+    <!-- Generic Modal -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content card">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+<!-- Scripts -->
+<script src="js/matrix-rain.js"></script>
+<script src="js/3d-background.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/services.js"></script>
+<script src="js/project-reports.js"></script>
+<script src="js/roadmap.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/github-repos.js"></script>
+<script src="js/github-stats.js"></script>
+<script src="js/theme-toggle.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/particle-explosion.js"></script>
+<script src="js/bug-bounty.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/youtube-player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+
+</html>

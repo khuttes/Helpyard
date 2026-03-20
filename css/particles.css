@@ -1,0 +1,62 @@
+/* Particle Explosion Effects */
+.particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: particle-explode 1s ease-out forwards;
+}
+
+@keyframes particle-explode {
+    to {
+        transform: translate(var(--tx), var(--ty));
+        opacity: 0;
+        scale: 0;
+    }
+}
+
+/* Particle variants */
+.particle-primary {
+    background: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+.particle-secondary {
+    background: var(--color-secondary);
+    box-shadow: 0 0 10px var(--color-secondary);
+}
+
+.particle-accent {
+    background: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+/* Glow effect on hover for interactive elements */
+.particle-trigger {
+    position: relative;
+    overflow: visible;
+}
+
+.particle-trigger::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.particle-trigger:hover::after {
+    width: 200%;
+    height: 200%;
+    opacity: 0.1;
+}

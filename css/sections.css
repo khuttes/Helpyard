@@ -1,0 +1,256 @@
+/* Section Specific Styles */
+
+/* Hero Section */
+.hero {
+    padding-top:120px;
+}
+
+.hero-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+.hero-video{
+    flex:1;
+    max-width:420px;
+}
+
+.hero-video iframe{
+    width:100%;
+    height:240px;
+    border-radius:10px;
+}
+.hero-content{
+    flex:1;
+}
+
+.hero-content h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero-content p{
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        padding: 0 1rem;
+        text-align: center;
+    }
+}
+
+/* Roadmap Section */
+.roadmap-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--glass-border);
+    transform: translateX(-50%);
+}
+
+.roadmap-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: var(--space-8);
+    width: 100%;
+}
+
+.roadmap-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+.roadmap-content {
+    width: 90%;
+    padding: var(--space-6);
+    position: relative;
+}
+
+.roadmap-item:nth-child(even) .roadmap-content {
+    margin-left: auto;
+}
+
+.roadmap-dot {
+    position: absolute;
+    right: -8px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background: var(--color-bg-dark);
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.roadmap-item:nth-child(even) .roadmap-dot {
+    right: auto;
+    left: -8px;
+}
+
+.roadmap-status {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+.status-completed {
+    color: var(--color-accent);
+}
+
+.status-inprogress {
+    color: var(--color-warning);
+}
+
+.status-planned {
+    color: var(--color-text-muted);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-6);
+}
+
+.skill-category h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+    color: var(--color-secondary);
+}
+
+.skill-bar {
+    margin-bottom: var(--space-4);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-1);
+    font-size: var(--text-sm);
+}
+
+.skill-progress {
+    height: 6px;
+    background: var(--glass-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-main);
+    border-radius: var(--radius-full);
+    width: 0;
+    /* Animated with JS */
+    transition: width 1.5s ease-out;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-image {
+    height: 200px;
+    background: var(--glass-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.card:hover .project-image img {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-4);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-main);
+    font-family: var(--font-main);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .roadmap-timeline::before {
+        left: 20px;
+    }
+
+    .roadmap-item {
+        padding-right: 0;
+        padding-left: 50px;
+        justify-content: flex-start;
+    }
+
+    .roadmap-item:nth-child(even) {
+        padding-left: 50px;
+    }
+
+    .roadmap-dot,
+    .roadmap-item:nth-child(even) .roadmap-dot {
+        left: 12px;
+    }
+
+    .roadmap-content {
+        width: 100%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}

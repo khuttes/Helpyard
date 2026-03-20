@@ -1,0 +1,70 @@
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 60px;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--color-bg-dark);
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid var(--color-primary);
+    width: 80%;
+    max-width: 800px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
+    animation: modalSlideIn 0.4s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    color: var(--color-text-muted);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--color-primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-body h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+#modal-body .badge {
+    margin-bottom: 1rem;
+}
